@@ -1,0 +1,187 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling with Background */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0073ff;  /* Light background color for entire page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    padding: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Container Styling */
+  .container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    max-height: 100vh;
+    overflow-y: auto; /* Allow vertical scrolling inside the container */
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Heading */
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Input Field and Button */
+  .todo-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: sticky; /* Sticky positioning */
+    top: 0; /* Stick to the top of the container */
+    background-color: #ffffff;
+    padding: 10px 0;
+    z-index: 1; /* Ensure it stays above tasks */
+  }
+  
+  .todo-input input {
+    width: 70%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .todo-input input:focus {
+    border-color: #00bcd4;
+    transition: border-color 0.3s;
+  }
+  
+  .todo-input button {
+    padding: 12px 20px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .todo-input button:hover {
+    background-color: #0097a7;
+  }
+  
+  /* To-Do List */
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    animation: scaleIn 0.3s ease-in-out;
+  }
+  
+  li span {
+    color: #333;
+    flex-grow: 1;  /* Ensure task text grows to fill space */
+    text-align: left;
+  }
+  
+  /* Edit and Delete Buttons (Alignment Fix) */
+  li button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin-left: 10px; /* Add space between buttons */
+  }
+  
+  li .edit {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  li .edit:hover {
+    background-color: #ff9800;
+  }
+  
+  li .delete {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  li .delete:hover {
+    background-color: #e53935;
+  }
+  
+  /* Clear All Button Styling */
+  .clear-all {
+    padding: 12px 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .clear-all:hover {
+    background-color: #e64a19;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 600px) {
+    .container {
+      width: 100%;
+      height: 100vh;
+      max-height: 100vh;
+    }
+    
+    .todo-input {
+      flex-direction: column;
+    }
+  
+    .todo-input input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .todo-input button {
+      width: 100%;
+    }
+  
+    li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    li button {
+      margin-top: 10px;
+      width: 100%;
+    }
+  
+    .clear-all {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  
